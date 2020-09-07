@@ -33,6 +33,16 @@ Use `docker-compose exec kafka ls bin/` to see the top level scripts.
 docker-compose exec kafka bin/kafka-console-producer.sh --broker-list kafka:9092 --topic messages
 ```
 
+### Kafka WebView
+
+The Docker Compose setup comes bundled with the
+[Kafka WebView](https://github.com/SourceLabOrg/kafka-webview)
+
+This is started and exposed on port `8080`.
+
+Open http://localhost:8080 in your web browser. You need to create a view
+initally. Then you can either browse or stream the messages.
+
 ## Sources
 
 [[1] QUARKUS - USING APACHE KAFKA WITH REACTIVE MESSAGING](https://quarkus.io/guides/kafka)
