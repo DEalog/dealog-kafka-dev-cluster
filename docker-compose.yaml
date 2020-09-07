@@ -10,6 +10,8 @@ services:
     ]
     ports:
       - "2181:2181"
+    networks:
+      - default
     environment:
       LOG_DIR: /tmp/logs
 
@@ -23,8 +25,15 @@ services:
       - zookeeper
     ports:
       - "9092:9092"
+    networks:
+      - default
+      - dealog_dev
     environment:
       LOG_DIR: "/tmp/logs"
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
       KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+
+networks:
+  dealog_dev:
+    external: true
