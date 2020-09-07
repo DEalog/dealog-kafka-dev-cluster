@@ -40,8 +40,12 @@ The Docker Compose setup comes bundled with the
 
 This is started and exposed on port `8080`.
 
-Open http://localhost:8080 in your web browser. You need to create a view
-initally. Then you can either browse or stream the messages.
+Open http://localhost:8080 in your web browser.
+
+First you need to setup the cluster (`kafka:9092`). Next you need to create a
+view. Then you can either browse or stream the messages.
+
+The initial username is `admin@example.org`, the default password is `admin`.
 
 ## Sources
 
