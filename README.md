@@ -23,6 +23,14 @@ The origin docker-compose file is from the
 docker-compose up [-d]
 ```
 
+### Available listeners
+
+To be able to use the cluster locally as well as Docker there are two listeners
+available:
+
+- `localhost:9092` for local (external) access
+- `kafka:29092` for Docker (internal) access
+
 ### Run commands
 
 Use `docker-compose exec kafka ls bin/` to see the top level scripts.
@@ -30,7 +38,7 @@ Use `docker-compose exec kafka ls bin/` to see the top level scripts.
 ### Manually produce messages
 
 ```
-docker-compose exec kafka bin/kafka-console-producer.sh --broker-list kafka:9092 --topic messages
+docker-compose exec kafka bin/kafka-console-producer.sh --broker-list kafka:29092 --topic messages
 ```
 
 ### Kafka WebView
@@ -38,11 +46,11 @@ docker-compose exec kafka bin/kafka-console-producer.sh --broker-list kafka:9092
 The Docker Compose setup comes bundled with the
 [Kafka WebView](https://github.com/SourceLabOrg/kafka-webview)
 
-This is started and exposed on port `8080`.
+This is started and exposed on port `8081`.
 
-Open http://localhost:8080 in your web browser.
+Open http://localhost:8081 in your web browser.
 
-First you need to setup the cluster (`kafka:9092`). Next you need to create a
+First you need to setup the cluster (`kafka:29092`). Next you need to create a
 view. Then you can either browse or stream the messages.
 
 The initial username is `admin@example.org`, the default password is `admin`.
